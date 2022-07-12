@@ -1,4 +1,4 @@
-package hu.plantae.Repository;
+package hu.plantae.service;
 
 import hu.plantae.domain.Sensor;
 import hu.plantae.domain.SensorReading;

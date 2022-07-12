@@ -1,4 +1,4 @@
-package hu.plantae.Repository;
+package hu.plantae.IT;
 
 import hu.plantae.domain.SensorType;
 import hu.plantae.dto.*;
@@ -8,10 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.annotation.DirtiesContext;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static hu.plantae.domain.SunRequirement.FULLSUN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

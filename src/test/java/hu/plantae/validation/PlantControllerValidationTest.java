@@ -1,4 +1,4 @@
-package hu.plantae.Repository;
+package hu.plantae.validation;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hu.plantae.controller.PlantController;

@@ -47,7 +47,7 @@ public class SensorService {
 
     protected Sensor getSensor(int sensorId) {
         Optional<Sensor> foundSensor = sensorRepository.findSensorById(sensorId);
-        if (!foundSensor.isPresent() || foundSensor.get().isDeleted()) {
+        if (foundSensor.isEmpty() || foundSensor.get().isDeleted()) {
             throw new SensorNotFoundException().setIdNotFound(sensorId);
         }
         return foundSensor.get();
@@ -71,8 +71,7 @@ public class SensorService {
     }
 
     public List<SensorInfoReadingless> listAllSensors() {
-        List<SensorInfoReadingless> sensors = sensorRepository.findSensors();
-        return sensors;
+        return sensorRepository.findSensors();
     }
 
     public SensorInfoReadingless modifySamplingPeriod(Integer sensorId, Integer samplingPeriod) {
@@ -84,7 +83,7 @@ public class SensorService {
     public SensorReadingInfo lastReading(int sensorId) {
         getSensor(sensorId);
         Optional<SensorReading> foundReading = sensorReadingRepository.getLastReading(sensorId);
-        if (!foundReading.isPresent()) {
+        if (foundReading.isEmpty()) {
             throw new ReadingNotFoundException();
         }
         return modelMapper.map(foundReading.get(), SensorReadingInfo.class);
@@ -98,7 +97,7 @@ public class SensorService {
         List<Sensor> foundSensors = sensorRepository.findAllSensor();
         List<SensorInfoReadingless> invalidSensors = new ArrayList<>();
         LocalDate deadline = LocalDate.now().minusMonths(sensorValidMonths);
-        System.out.println(sensorValidMonths);
+
         for (Sensor sensor : foundSensors) {
             LocalDateTime time = sensor.getLastCalibrated();
             boolean checkDeadline = time == null || time.toLocalDate().isBefore(deadline);
@@ -121,9 +120,10 @@ public class SensorService {
         List<SensorReading> readings = sensor.getSensorReadings();
         int deadlineIndex = 0;
         for (int i = 0; i < readings.size(); i++) {
-            if (readings.get(i).getTime().isBefore(deadline)) ;
-            deadlineIndex = i;
-            break;
+            if (readings.get(i).getTime().isBefore(deadline)) {
+                deadlineIndex = i;
+                break;
+            }
         }
         List<SensorReading> extractedReadings = readings.subList(deadlineIndex, readings.size());
         Sensor sensorModified = sensor;

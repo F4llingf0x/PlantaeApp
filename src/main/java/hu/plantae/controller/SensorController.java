@@ -22,7 +22,7 @@ import java.util.List;
 @Validated
 public class SensorController {
 
-    SensorService sensorService;
+    private SensorService sensorService;
 
     public SensorController(SensorService sensorService) {
         this.sensorService = sensorService;

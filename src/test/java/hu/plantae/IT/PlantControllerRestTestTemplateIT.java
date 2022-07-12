@@ -1,4 +1,4 @@
-package hu.plantae.Repository;
+package hu.plantae.IT;
 
 import hu.plantae.domain.SensorType;
 import hu.plantae.dto.*;
