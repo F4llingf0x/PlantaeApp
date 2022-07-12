@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>d6bff529-079d-40e4-a25a-ae9f527819de.SCHEMA:plantae</OriginalElement>
+  <nodes>
+    <node x="238.50000000000003" y="347.5">d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant_name</node>
+    <node x="673.0" y="0.0">d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.flyway_schema_history</node>
+    <node x="217.00000000000003" y="0.0">d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant</node>
+    <node x="425.5" y="347.5">d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant_pictures</node>
+    <node x="39.50000000000003" y="281.0">d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.sensor</node>
+    <node x="54.00000000000003" y="540.0">d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.sensor_reading</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant_name" target="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant" relationship="REFERENCES">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant_pictures" target="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant" relationship="REFERENCES">
+      <point x="0.0" y="-38.0" />
+      <point x="499.0" y="256.0" />
+      <point x="322.0" y="256.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.sensor_reading" target="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.sensor" relationship="REFERENCES">
+      <point x="0.0" y="-60.5" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.sensor" target="d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.plant" relationship="REFERENCES">
+      <point x="0.0" y="-104.5" />
+      <point x="129.00000000000003" y="256.0" />
+      <point x="322.0" y="256.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8414096916299559" showDependencies="false" x="426.0" y="330.5" />
+  <SelectedNodes>
+    <node>d6bff529-079d-40e4-a25a-ae9f527819de.TABLE:plantae.flyway_schema_history</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
